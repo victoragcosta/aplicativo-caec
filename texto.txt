@@ -1,0 +1,27 @@
+Água, 1.0, 0, bebida
+Guaraná, 2.5, 0, bebida
+Mineiro, 2.0, 0, bebida
+Coca Cola, 2.5, 0, bebida
+Coca Zero, 2.5, 0, bebida
+Scheweppes, 3.0, 0, bebida
+Sprite, 1.0, 0, bebida
+Amendoim, 1.0, 5, snack
+Paçoca, 0.15, 5, snack
+Passatempo, 1.0, 3, snack
+Bolinho, 10.0, 10, snack
+KitKat, 10.0, 10, snack
+Croc, 3.0, 10, snack
+Chokito, 100.0, 3, snack
+Bombom, 1.0, 3, snack
+Big Big, 1.5, 3, snack
+Tortuguita, 1.5, 5, snack
+Prestígio, 0.5, 0, snack
+Plutonita, 2.5, 5, snack
+Holandesa, 3.0, 0, outro
+Continente, 2.5, 1, outro
+Pobre, 3.0, 0, outro
+Holandinha, 3.0, 0, outro
+Contininho, 3.0, 0, outro
+Pobrinho, 3.0, 0, outro
+Munchkin, 3.5, 0, outro
+Sinuca, 3.0, 0, outro
