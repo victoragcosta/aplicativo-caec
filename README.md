@@ -50,7 +50,8 @@ Aplicativo para auxiliar no controle do estoque e venda do CAEC.
   Por algum motivo, os estoques de snacks e outros ficam ciclando, o de bebidas está normal.
   
 # A melhorar
-  - Código para leitura e escrita do arquivo texto.txt
-  - Passar a usar um banco de dados em vez de um arquivo texto
-  - Implementar função relatório
-  - Implementar função do botão Remove Produto
+  - Código para leitura e escrita do arquivo texto.txt.
+  - Passar a usar um banco de dados em vez de um arquivo texto.
+  - Implementar função relatório.
+  - Implementar função do botão Remove Produto.
+  - Descobrir as formatações bonitinhas para tornar o README mais visualmente atrativo.
