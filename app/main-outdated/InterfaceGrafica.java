@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.*;
 import javax.swing.*;
+
 import basico.Produto;
 
 public class InterfaceGrafica extends JFrame {

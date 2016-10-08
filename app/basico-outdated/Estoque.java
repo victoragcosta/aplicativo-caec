@@ -2,6 +2,8 @@ package basico;
 
 import java.io.*;
 
+import basico.Produto;
+
 public class Estoque {
 	//7 Bebidas, 12 Snacks, 8 Outros
 	public int quantBebidas = 0,

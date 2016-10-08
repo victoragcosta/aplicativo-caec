@@ -1,5 +1,6 @@
 package basico;
 
+import basico.TipoProduto;
 
 public class Produto {
 	

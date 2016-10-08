@@ -3,7 +3,7 @@ package examples;
 import java.io.*;
 
 import basico.Estoque;
-import basico.Produto;
+import model.classes.Produto;
 
 public class JavaLesson32 {
 
