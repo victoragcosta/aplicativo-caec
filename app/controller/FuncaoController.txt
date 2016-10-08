@@ -1,0 +1,6 @@
+O controller tem a função de controlar as entradas
+e saídas da View e do Model. Não pode ocorrer
+interação direta entre a View e a Model, por isso
+tem-se o controller para garantir segurança para o
+banco de dados e também um código mais fácil de se
+ler.

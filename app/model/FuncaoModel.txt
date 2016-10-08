@@ -1,0 +1,13 @@
+Todas as classes existentes na model tem o objetivo de
+acessar o banco de dados de variadas formas, sendo que
+na pasta classes temos classes que vão nos ajudar a
+armazenar os dados no programa, como tipos de produtos
+e essas coisas. Na pasta DAO temos as classes que
+vão manusear diretamente o banco de dados (no nosso 
+caso um arquivo de texto) e ele será controlado somente
+pelo service. Na pasta service temos classes que vão
+corresponder a cada classe dentro de DAO, elas vão
+possuir regras de negócio, por exemplo, se queremos
+checar a existência de um produto, nós pedimos os 
+produtos com tal nome para o DAO e no service nós
+testamos se existe.

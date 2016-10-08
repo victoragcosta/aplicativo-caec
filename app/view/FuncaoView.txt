@@ -1,0 +1,4 @@
+A view tem como função a exibição dos dados para
+o usuário e no caso do nosso programa, também seria
+interessante servir para capturar entradas e mandar
+para o controller decidir o que fará.
