@@ -2,16 +2,15 @@ package basico;
 
 import basico.AcessoBDProdutos;
 import java.util.ArrayList;
-import java.io.*;
 
 public class Estoque {
 	//7 Bebidas, 12 Snacks, 8 Outros
 	public int quantBebidas = 0,
 			quantSnacks = 0,
 			quantOutros = 0;
-	public Produto[] bebidas = new Produto[9];
-	public Produto[] snacks = new Produto[18];
-	public Produto[] outros = new Produto[9];
+	public Produto[] bebidas = new Produto[30];
+	public Produto[] snacks = new Produto[30];
+	public Produto[] outros = new Produto[30];
 	private AcessoBDProdutos produtos = new AcessoBDProdutos();
 	
 	public Estoque(){
@@ -21,12 +20,21 @@ public class Estoque {
 	
 	public void atualizarProdutos(){
 		produtos.readProdutos();
-		bebidas = (Produto[]) produtos.getBebidas().toArray();
-		snacks = (Produto[]) produtos.getSnacks().toArray();
-		outros = (Produto[]) produtos.getOutros().toArray();
-		quantBebidas = produtos.getBebidas().size();
-		quantSnacks = produtos.getSnacks().size();
-		quantOutros = produtos.getOutros().size();
+		ArrayList<Produto> tempArray = produtos.getBebidas();
+		for(quantBebidas = 0; quantBebidas < tempArray.size(); quantBebidas++){
+			bebidas[quantBebidas] = tempArray.get(quantBebidas);
+		}
+		quantBebidas = tempArray.size();
+		tempArray = produtos.getSnacks();
+		for(quantSnacks = 0; quantSnacks < tempArray.size(); quantSnacks++){
+			snacks[quantSnacks] = tempArray.get(quantSnacks);
+		}
+		quantSnacks = tempArray.size();
+		tempArray = produtos.getOutros();
+		for(quantOutros = 0; quantOutros < tempArray.size(); quantOutros++){
+			outros[quantOutros] = tempArray.get(quantOutros);
+		}
+		quantOutros = tempArray.size();
 	}
 	
 	public void atualizarValores(){

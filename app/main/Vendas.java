@@ -44,15 +44,15 @@ public class Vendas extends JFrame {
 	private static final long serialVersionUID = 1L;
 	Estoque estoque = new Estoque();
 
-	int[] clicaBebida = new int[9];	
-	int[] clicaSnack = new int[18];
-	int[] clicaOutro = new int[9];
+	int[] clicaBebida = new int[30];	
+	int[] clicaSnack = new int[30];
+	int[] clicaOutro = new int[30];
 	
 	private String pedidoCompleto = new String();
 	
-	JTextArea[] textAreaBebida = new JTextArea[9];
-	JTextArea[] textAreaSnack = new JTextArea[18];
-	JTextArea[] textAreaOutro = new JTextArea[9];
+	JTextArea[] textAreaBebida = new JTextArea[30];
+	JTextArea[] textAreaSnack = new JTextArea[30];
+	JTextArea[] textAreaOutro = new JTextArea[30];
 	JTextArea textAreaPedidos;
 
 	
@@ -186,7 +186,6 @@ public class Vendas extends JFrame {
 					}
 				}
 			});
-			panelBebida[i].add(button1Bebida[i]);
 			
 			labelBebida[i] = new JLabel((i+1)+" - " + estoque.bebidas[i].getNome());
 			labelBebida[i].setHorizontalAlignment(SwingConstants.CENTER);
