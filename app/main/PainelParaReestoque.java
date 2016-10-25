@@ -16,6 +16,8 @@ import javax.swing.border.LineBorder;
 
 import basico.Estoque;
 
+//FAZ ALGUMA COISA?
+
 public class PainelParaReestoque {
 
 	private JFrame frame;
@@ -80,6 +82,7 @@ public class PainelParaReestoque {
 	 * Create the application.
 	 */
 	public PainelParaReestoque() {
+		System.out.println("Meu pau com asa");
 		initialize();
 	}
 
@@ -101,6 +104,7 @@ public class PainelParaReestoque {
 		reestoque.add(panelBebidas);
 		panelBebidas.setLayout(null);
 		
+		//Aqui começa a repetição louca
 		JPanel panelBebida1 = new JPanel();
 		panelBebida1.setBounds(0, 0, 175, 40);
 		panelBebidas.add(panelBebida1);
@@ -117,6 +121,7 @@ public class PainelParaReestoque {
 		panelBebida1.add(textFieldBebida1);
 		textFieldBebida1.setColumns(10);
 		
+		//Aqui repete locamente
 		JPanel panelBebida2 = new JPanel();
 		panelBebida2.setBounds(0, 50, 175, 40);
 		panelBebidas.add(panelBebida2);
@@ -244,12 +249,15 @@ public class PainelParaReestoque {
 		textFieldBebida9.setColumns(10);
 		textFieldBebida9.setBounds(138, 7, 30, 26);
 		panelBebida9.add(textFieldBebida9);
+		//Fim dessa repete de bebidas
+		
 		
 		JPanel panelSnacks = new JPanel();
 		panelSnacks.setLayout(null);
 		panelSnacks.setBounds(190, 6, 175, 456);
 		reestoque.add(panelSnacks);
 		
+		//Repetição dos snacks doidões
 		JPanel panelSnack1 = new JPanel();
 		panelSnack1.setLayout(null);
 		panelSnack1.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -265,6 +273,7 @@ public class PainelParaReestoque {
 		textField_2.setColumns(10);
 		textField_2.setBounds(138, 7, 30, 26);
 		panelSnack1.add(textField_2);
+		//Fim da estrutura que repete locona
 		
 		JPanel panelSnack2 = new JPanel();
 		panelSnack2.setLayout(null);
@@ -393,12 +402,14 @@ public class PainelParaReestoque {
 		textField_17.setColumns(10);
 		textField_17.setBounds(138, 7, 30, 26);
 		panelSnack9.add(textField_17);
+		// PARA PARA TUDO!
 		
 		JPanel panel2Snacks = new JPanel();
 		panel2Snacks.setLayout(null);
 		panel2Snacks.setBounds(380, 6, 175, 456);
 		reestoque.add(panel2Snacks);
 		
+		//repete essa porra de novo
 		JPanel panel2Snack1 = new JPanel();
 		panel2Snack1.setLayout(null);
 		panel2Snack1.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -414,6 +425,7 @@ public class PainelParaReestoque {
 		textField_18.setColumns(10);
 		textField_18.setBounds(138, 7, 30, 26);
 		panel2Snack1.add(textField_18);
+		//essa porra aqui em cima mesmo
 		
 		JPanel panel2Snack2 = new JPanel();
 		panel2Snack2.setLayout(null);
@@ -542,12 +554,15 @@ public class PainelParaReestoque {
 		textField_26.setColumns(10);
 		textField_26.setBounds(138, 7, 30, 26);
 		panel2Snack9.add(textField_26);
+		// PARA ESSA PORRA AQUI MEIXMO
+		
 		
 		JPanel panelOutros = new JPanel();
 		panelOutros.setLayout(null);
 		panelOutros.setBounds(567, 6, 175, 456);
 		reestoque.add(panelOutros);
 		
+		//repete isso aqui V
 		JPanel panelOutro1 = new JPanel();
 		panelOutro1.setLayout(null);
 		panelOutro1.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -563,6 +578,7 @@ public class PainelParaReestoque {
 		textField_27.setColumns(10);
 		textField_27.setBounds(138, 7, 30, 26);
 		panelOutro1.add(textField_27);
+		//isso aqui meIXmo ^
 		
 		JPanel panelOutro2 = new JPanel();
 		panelOutro2.setLayout(null);
@@ -691,6 +707,7 @@ public class PainelParaReestoque {
 		textField_35.setColumns(10);
 		textField_35.setBounds(138, 7, 30, 26);
 		panelOutro9.add(textField_35);
+		//PARA TUTO
 		
 		JButton button = new JButton("OK");
 		button.addActionListener(new ActionListener() {

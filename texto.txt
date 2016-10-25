@@ -4,24 +4,24 @@ Mineiro, 2.0, 0, bebida
 Coca Cola, 3.0, 0, bebida
 Coca Zero, 3.0, 0, bebida
 Scheweppes, 3.5, 0, bebida
-Sprite, 2.5, 10, bebida
-Amendoim, 2.0, 1, snack
-Pacoca, 0.75, 10, snack
-Passatempo, 2.5, 10, snack
-Bolinho, 1.0, 10, snack
-KitKat, 3.5, 3, snack
-Croc, 3.0, 3, snack
-Chokito, 1.5, 3, snack
-Bombom, 1.0, 5, snack
-Big Big, 0.1, 0, snack
-Tortuguita, 1.0, 5, snack
-Prestigio, 1.5, 5, snack
-Plutonita, 0.1, 3, snack
-Holandesa, 3.5, 0, outro
-Continente, 3.0, 0, outro
+Sprite, 1.0, 0, bebida
+Amendoim, 0.75, 0, snack
+Pacoca, 2.5, 0, snack
+Passatempo, 1.0, 0, snack
+Bolinho, 3.5, 0, snack
+KitKat, 3.0, 0, snack
+Croc, 1.5, 0, snack
+Chokito, 1.0, 0, snack
+Bombom, 0.1, 0, snack
+Big Big, 1.0, 0, snack
+Tortuguita, 1.5, 0, snack
+Prestigio, 2.0, 0, snack
+Plutonita, 0.75, 0, snack
+Holandesa, 3.0, 0, outro
+Continente, 3.5, 0, outro
 Pobre, 3.0, 0, outro
-Holandinha, 3.5, 0, outro
-Contininho, 3.0, 0, outro
-Pobrinho, 3.0, 0, outro
-Munchkin, 1.0, 0, outro
-Sinuca, 0.5, 0, outro
+Holandinha, 3.0, 0, outro
+Contininho, 1.0, 0, outro
+Pobrinho, 3.5, 0, outro
+Munchkin, 3.0, 0, outro
+Sinuca, 3.0, 0, outro
