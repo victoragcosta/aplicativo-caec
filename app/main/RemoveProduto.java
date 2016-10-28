@@ -176,9 +176,7 @@ public class RemoveProduto {
 				panelOutro[i].setBorder(new LineBorder(new Color(0, 0, 0)));
 				panelOutros.add(panelOutro[i]);
 				
-				System.out.println(i);
-				
-				labelOutro[i] = new JLabel(estoque.bebidas[i].getNome());
+				labelOutro[i] = new JLabel(estoque.outros[i].getNome());
 				labelOutro[i].setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 				labelOutro[i].setBounds(6, 6, 120, 26);
 				panelOutro[i].add(labelOutro[i]);
@@ -253,12 +251,10 @@ public class RemoveProduto {
 				if(!foundError){
 					estoque.vendeEstoque();//atualiza o BD
 					
-					//JTextPane textPaneAviso = new JTextPane();
-					//textPaneAviso.setEditable(false);
-					//textPaneAviso.setBackground(SystemColor.window);
-					//textPaneAviso.setText("Produtos removidos com sucesso. Por favor reinicie o aplicativo\n");
-					//textPaneAviso.setBounds(754, 6, 110, 128);
-					//removeProduto.add(textPaneAviso);
+					JPanel frameDone = new JPanel();
+					JOptionPane.showMessageDialog(frameDone ,"Inserção bem sucedida. Reinicie o aplicativo."
+							, "FEITO", JOptionPane.PLAIN_MESSAGE);
+					frame.dispose();
 				}
 				
 				estoque.atualizarValores();
