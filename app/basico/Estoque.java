@@ -63,5 +63,9 @@ public class Estoque {
 		produtos.setOutros(temp);
 		produtos.writeProdutos();
 	}
+	
+	public AcessoBDProdutos getAcesso(){
+		return produtos;
+	}
 
 }

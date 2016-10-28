@@ -4,17 +4,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.SystemColor;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;//Entrará no lugar dos vetores
 
-import basico.Estoque;
-import basico.Produto;
+import basico.Estoque;//Vai ser substituido por AcessoBDProdutos
+import basico.AcessoBDProdutos;
 
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JButton;
@@ -28,18 +26,19 @@ public class RemoveProduto {
 	private JFrame frame;
 	private JPanel removeProduto;
 	private Estoque estoque;
+	private AcessoBDProdutos acessoBD;
 	
-	private JPanel[] panelBebida = new JPanel[30];
-	private JPanel[] panelSnack = new JPanel[30];
-	private JPanel[] panelOutro = new JPanel[30];
+	private ArrayList<JPanel> panelBebida = new ArrayList<JPanel>();
+	private ArrayList<JPanel> panelSnack = new ArrayList<JPanel>();
+	private ArrayList<JPanel> panelOutro = new ArrayList<JPanel>();
 	
-	private JLabel[] labelBebida = new JLabel[30];
-	private JLabel[] labelSnack = new JLabel[30];
-	private JLabel[] labelOutro = new JLabel[30];
+	private ArrayList<JLabel> labelBebida = new ArrayList<JLabel>();
+	private ArrayList<JLabel> labelSnack = new ArrayList<JLabel>();
+	private ArrayList<JLabel> labelOutro = new ArrayList<JLabel>();
 	
-	private JToggleButton[] toggleBebida = new JToggleButton[30];
-	private JToggleButton[] toggleSnack = new JToggleButton[30];
-	private JToggleButton[] toggleOutro = new JToggleButton[30];
+	private ArrayList<JToggleButton> toggleBebida = new ArrayList<JToggleButton>();
+	private ArrayList<JToggleButton> toggleSnack = new ArrayList<JToggleButton>();
+	private ArrayList<JToggleButton> toggleOutro = new ArrayList<JToggleButton>();
 
 	/**
 	 * Launch the application.
@@ -62,6 +61,7 @@ public class RemoveProduto {
 	 */
 	public RemoveProduto(Estoque estoque) {
 		this.estoque = estoque;
+		this.acessoBD = estoque.getAcesso();
 		System.out.println("Adoro chocolate");
 		initialize();
 	}
@@ -90,22 +90,22 @@ public class RemoveProduto {
 		removeProduto.add(panelBebidas);
 		panelBebidas.setLayout(null);
 		
-		for(int i = 0; i < estoque.quantBebidas; i++){
-			if(estoque.bebidas[i] != null){
-				panelBebida[i] = new JPanel();
-				panelBebida[i].setBounds(0, 50*i, 175, 40);
-				panelBebida[i].setLayout(null);
-				panelBebida[i].setBorder(new LineBorder(new Color(0, 0, 0)));
-				panelBebidas.add(panelBebida[i]);
+		for(int i = 0; i < acessoBD.getBebidas().size(); i++){
+			if(acessoBD.getBebidas().get(i) != null){
+				panelBebida.add(new JPanel());
+				panelBebida.get(i).setBounds(0, 50*i, 175, 40);
+				panelBebida.get(i).setLayout(null);
+				panelBebida.get(i).setBorder(new LineBorder(new Color(0, 0, 0)));
+				panelBebidas.add(panelBebida.get(i));
 				
-				labelBebida[i] = new JLabel(estoque.bebidas[i].getNome());
-				labelBebida[i].setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-				labelBebida[i].setBounds(6, 6, 120, 26);
-				panelBebida[i].add(labelBebida[i]);
+				labelBebida.add(new JLabel(acessoBD.getBebidas().get(i).getNome()));
+				labelBebida.get(i).setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+				labelBebida.get(i).setBounds(6, 6, 120, 26);
+				panelBebida.get(i).add(labelBebida.get(i));
 				
-				toggleBebida[i] = new JToggleButton();
-				toggleBebida[i].setBounds(140, 8, 25, 25);
-				panelBebida[i].add(toggleBebida[i]);
+				toggleBebida.add(new JToggleButton());
+				toggleBebida.get(i).setBounds(140, 8, 25, 25);
+				panelBebida.get(i).add(toggleBebida.get(i));
 			}
 		}
 		
@@ -116,22 +116,22 @@ public class RemoveProduto {
 		removeProduto.add(panelSnacks);
 		panelSnacks.setLayout(null);
 		
-		for(int i = 0; i < estoque.quantSnacks && i < 9; i++){
-			if(estoque.snacks[i] != null){
-				panelSnack[i] = new JPanel();
-				panelSnack[i].setBounds(0, 50*i, 175, 40);
-				panelSnack[i].setLayout(null);
-				panelSnack[i].setBorder(new LineBorder(new Color(0, 0, 0)));
-				panelSnacks.add(panelSnack[i]);
+		for(int i = 0; i < acessoBD.getSnacks().size() && i < 9; i++){
+			if(acessoBD.getSnacks().get(i) != null){
+				panelSnack.add(new JPanel());
+				panelSnack.get(i).setBounds(0, 50*i, 175, 40);
+				panelSnack.get(i).setLayout(null);
+				panelSnack.get(i).setBorder(new LineBorder(new Color(0, 0, 0)));
+				panelSnacks.add(panelSnack.get(i));
 				
-				labelSnack[i] = new JLabel(estoque.snacks[i].getNome());
-				labelSnack[i].setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-				labelSnack[i].setBounds(6, 6, 120, 26);
-				panelSnack[i].add(labelSnack[i]);
+				labelSnack.add(new JLabel(acessoBD.getSnacks().get(i).getNome()));
+				labelSnack.get(i).setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+				labelSnack.get(i).setBounds(6, 6, 120, 26);
+				panelSnack.get(i).add(labelSnack.get(i));
 				
-				toggleSnack[i] = new JToggleButton();
-				toggleSnack[i].setBounds(140, 8, 25, 25);
-				panelSnack[i].add(toggleSnack[i]);
+				toggleSnack.add(new JToggleButton());
+				toggleSnack.get(i).setBounds(140, 8, 25, 25);
+				panelSnack.get(i).add(toggleSnack.get(i));
 			}
 		}
 		
@@ -141,23 +141,23 @@ public class RemoveProduto {
 		removeProduto.add(panel2Snacks);
 		panel2Snacks.setLayout(null);
 		
-		if(estoque.quantSnacks >= 10){
+		if(acessoBD.getSnacks().size() >= 10){
 			for(int i = 9; i < estoque.quantSnacks; i++){
-				if(estoque.snacks[i] != null){
-					panelSnack[i] = new JPanel();
-					panelSnack[i].setBounds(0, 50*(i-9), 175, 40);
-					panelSnack[i].setLayout(null);
-					panelSnack[i].setBorder(new LineBorder(new Color(0, 0, 0)));
-					panel2Snacks.add(panelSnack[i]);
+				if(acessoBD.getSnacks().get(i) != null){
+					panelSnack.add(new JPanel());
+					panelSnack.get(i).setBounds(0, 50*(i-9), 175, 40);
+					panelSnack.get(i).setLayout(null);
+					panelSnack.get(i).setBorder(new LineBorder(new Color(0, 0, 0)));
+					panel2Snacks.add(panelSnack.get(i));
 					
-					labelSnack[i] = new JLabel(estoque.snacks[i].getNome());
-					labelSnack[i].setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-					labelSnack[i].setBounds(6, 6, 120, 26);
-					panelSnack[i].add(labelSnack[i]);
+					labelSnack.add(new JLabel(acessoBD.getSnacks().get(i).getNome()));
+					labelSnack.get(i).setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+					labelSnack.get(i).setBounds(6, 6, 120, 26);
+					panelSnack.get(i).add(labelSnack.get(i));
 					
-					toggleSnack[i] = new JToggleButton();
-					toggleSnack[i].setBounds(140, 8, 25, 25);
-					panelSnack[i].add(toggleSnack[i]);
+					toggleSnack.add(new JToggleButton());
+					toggleSnack.get(i).setBounds(140, 8, 25, 25);
+					panelSnack.get(i).add(toggleSnack.get(i));
 				}
 			}
 		}
@@ -168,22 +168,22 @@ public class RemoveProduto {
 		removeProduto.add(panelOutros);
 		panelOutros.setLayout(null);
 		
-		for(int i = 0; i < estoque.quantOutros; i++){
-			if(estoque.outros[i] != null){
-				panelOutro[i] = new JPanel();
-				panelOutro[i].setBounds(0, 50*i, 175, 40);
-				panelOutro[i].setLayout(null);
-				panelOutro[i].setBorder(new LineBorder(new Color(0, 0, 0)));
-				panelOutros.add(panelOutro[i]);
+		for(int i = 0; i < acessoBD.getOutros().size(); i++){
+			if(acessoBD.getOutros().get(i) != null){
+				panelOutro.add(new JPanel());
+				panelOutro.get(i).setBounds(0, 50*i, 175, 40);
+				panelOutro.get(i).setLayout(null);
+				panelOutro.get(i).setBorder(new LineBorder(new Color(0, 0, 0)));
+				panelOutros.add(panelOutro.get(i));
 				
-				labelOutro[i] = new JLabel(estoque.outros[i].getNome());
-				labelOutro[i].setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-				labelOutro[i].setBounds(6, 6, 120, 26);
-				panelOutro[i].add(labelOutro[i]);
+				labelOutro.add(new JLabel(acessoBD.getOutros().get(i).getNome()));
+				labelOutro.get(i).setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+				labelOutro.get(i).setBounds(6, 6, 120, 26);
+				panelOutro.get(i).add(labelOutro.get(i));
 				
-				toggleOutro[i] = new JToggleButton();
-				toggleOutro[i].setBounds(140, 8, 25, 25);
-				panelOutro[i].add(toggleOutro[i]);
+				toggleOutro.add(new JToggleButton());
+				toggleOutro.get(i).setBounds(140, 8, 25, 25);
+				panelOutro.get(i).add(toggleOutro.get(i));
 			}
 		}
 		
@@ -193,71 +193,40 @@ public class RemoveProduto {
 			public void actionPerformed(ActionEvent e) {
 				boolean foundError = false;
 				
-				Produto[] novoBebidas = new Produto[30];
-				Produto[] novoSnacks = new Produto[30];
-				Produto[] novoOutros = new Produto[30];
+				int i = 0;
+				while(toggleBebida.size() > 0){
+					if(toggleBebida.get(0).isSelected())
+						acessoBD.getBebidas().remove(i);
+					else i++;
+					toggleBebida.remove(0);
+				}
 				
-				int j = 0;
-				for(int i = 0; i < estoque.quantBebidas; i++){
-					try{
-						if(!toggleBebida[i].isSelected()){
-							novoBebidas[j] = estoque.bebidas[i];
-							j++;
-						}
-					}
-					catch(Exception eita){
-						eita.printStackTrace();
-					}
+				i = 0;
+				while(toggleSnack.size() > 0){
+					if(toggleSnack.get(0).isSelected())
+						acessoBD.getSnacks().remove(i);
+					else i++;
+					toggleSnack.remove(0);
 				}
-				for(int i = 0; i < j; i++){
-					estoque.bebidas[i] = novoBebidas[i];
-				}
-				estoque.quantBebidas = j;
 				
-				j = 0;
-				for(int i = 0; i < estoque.quantSnacks; i++){
-					try{
-						if(!toggleSnack[i].isSelected()){
-							novoSnacks[j] = estoque.snacks[i];
-							j++;
-						}
-					}
-					catch(Exception eita){
-						eita.printStackTrace();
-					}
+				i = 0;
+				while(toggleOutro.size() > 0){
+					if(toggleOutro.get(0).isSelected())
+						acessoBD.getOutros().remove(i);
+					else i++;
+					toggleOutro.remove(0);
 				}
-				for(int i = 0; i < j; i++){
-					estoque.snacks[i] = novoSnacks[i];
-				}
-				estoque.quantSnacks = j;
-				
-				j = 0;
-				for(int i = 0; i < estoque.quantOutros; i++){
-					try{
-						if(!toggleOutro[i].isSelected()){
-							novoOutros[j] = estoque.outros[i];
-							j++;
-						}
-					}
-					catch(Exception eita){
-						eita.printStackTrace();
-					}
-				}
-				for(int i = 0; i < j; i++){
-					estoque.outros[i] = novoOutros[i];
-				}
-				estoque.quantOutros = j;
 				
 				if(!foundError){
-					estoque.vendeEstoque();//atualiza o BD
+					acessoBD.writeProdutos();
 					
 					JPanel frameDone = new JPanel();
-					JOptionPane.showMessageDialog(frameDone ,"Inserção bem sucedida. Reinicie o aplicativo."
+					JOptionPane.showMessageDialog(frameDone ,"Remoção bem sucedida. Reinicie o aplicativo."
 							, "FEITO", JOptionPane.PLAIN_MESSAGE);
 					frame.dispose();
 				}
 				
-				estoque.atualizarValores();
+				estoque.atualizarValores();//compatibilidade com outras classes
 				frame.dispose();
 			}
 		});
