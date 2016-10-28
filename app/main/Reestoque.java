@@ -62,6 +62,7 @@ public class Reestoque {
 	 * Create the application.
 	 */
 	public Reestoque(Estoque estoque) {
+		System.out.println("Manda Nudes");
 		initialize(estoque);
 	}
 
@@ -77,7 +78,6 @@ public class Reestoque {
 		int xPos = (dim.width/2) - (frame.getWidth()/2);
 		int yPos = (dim.height/2) - (frame.getHeight()/2);
 		frame.setLocation(xPos, yPos);
-		
 		
 		mudaPreco = new JPanel();
 		mudaPreco.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -134,7 +134,6 @@ public class Reestoque {
 		mudaPreco.add(panel2Snacks);
 		
 		if(estoque.quantSnacks >= 10){
-			System.out.println("Hue Reestoque 145");
 			for(int i = 9; i < estoque.quantSnacks; i++){
 				panelSnack[i] = new JPanel();
 				panelSnack[i].setBounds(0, 50*(i-9), 175, 40);

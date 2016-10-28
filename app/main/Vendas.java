@@ -69,6 +69,7 @@ public class Vendas extends JFrame {
 	private Reestoque reestoque;
 	private MudaPreco mudaPreco;
 	private AdicionaProduto adicionaProduto;
+	private RemoveProduto removeProduto;
 	
 	
 	
@@ -186,6 +187,7 @@ public class Vendas extends JFrame {
 					}
 				}
 			});
+			panelBebida[i].add(button1Bebida[i]);
 			
 			labelBebida[i] = new JLabel((i+1)+" - " + estoque.bebidas[i].getNome());
 			labelBebida[i].setHorizontalAlignment(SwingConstants.CENTER);
@@ -628,6 +630,8 @@ public class Vendas extends JFrame {
 		buttonRemoveProduto.setBounds(6, 160, 172, 30);
 		buttonRemoveProduto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				removeProduto = new RemoveProduto(estoque);
+				removeProduto.removerProduto(estoque);
 				focusContentPane();
 			}
 		});

@@ -45,17 +45,20 @@ public class Estoque {
 		int i;
 		ArrayList<Produto> temp = new ArrayList<Produto>();
 		for(i = 0; i < quantBebidas; i++){
-			temp.add(this.bebidas[i]);
+			if(this.bebidas[i] != null)
+				temp.add(this.bebidas[i]);
 		}
 		produtos.setBebidas(temp);
 		temp.clear();
 		for(i = 0; i < quantSnacks; i++){
-			temp.add(this.snacks[i]);
+			if(this.snacks[i] != null)
+				temp.add(this.snacks[i]);
 		}
 		produtos.setSnacks(temp);
 		temp.clear();
 		for(i = 0; i < quantOutros; i++){
-			temp.add(this.outros[i]);
+			if(this.outros[i] != null)
+				temp.add(this.outros[i]);
 		}
 		produtos.setOutros(temp);
 		produtos.writeProdutos();
